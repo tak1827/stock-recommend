@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const program = require('commander')
+const { fetch } = require('./lib/web-scraping.js')
 
 function parseDate(value, previous) {
   return new Date(value)
@@ -13,9 +14,10 @@ program
   .command('fetch <stockCode>')
   .description('Fetching a specific stock')
   .option('-s, --start <value>', 'string argument', parseDate)
-  .option('-s, --end <value>', 'string argument', parseDate)
+  .option('-e, --end <value>', 'string argument', parseDate)
   .action((stockCode, cmdObj) => {
-    console.log(`${stockCode} ${cmdObj.start}`);
+    // console.log(`${stockCode} ${cmdObj.start}`);
+    fetch(stockCode, cmdObj.start, cmdObj.end)
   })
 
 // TODO
