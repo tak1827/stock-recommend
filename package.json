@@ -1,0 +1,26 @@
+{
+  "name": "stock-recommend",
+  "version": "1.0.0",
+  "description": "Recommend stock analyzing past trading history",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "stock": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tak1827/stock-recommend.git"
+  },
+  "keywords": [],
+  "author": "tak<re795h@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tak1827/stock-recommend/issues"
+  },
+  "homepage": "https://github.com/tak1827/stock-recommend#readme",
+  "dependencies": {
+    "commander": "^4.0.1"
+  }
+}
