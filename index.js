@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const program = require('commander')
-const { fetch } = require('./lib/web-scraping.js')
+const { fetch } = require('./lib/web-scraping')
 
 function parseDate(value, previous) {
   return new Date(value)
