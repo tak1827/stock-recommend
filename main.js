@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 const program = require('commander')
 const { fetch } = require('./lib/web-scraping')
+const { calculate } = require('./lib/index-calculator')
 
 function parseDate(value, previous) {
-  return new Date(value)
+  if (value) return new Date(`${value}T00:00:00`)
 }
 
 program
@@ -16,8 +17,17 @@ program
   .option('-s, --start <value>', 'string argument', parseDate)
   .option('-e, --end <value>', 'string argument', parseDate)
   .action((stockCode, cmdObj) => {
-    // console.log(`${stockCode} ${cmdObj.start}`);
     fetch(stockCode, cmdObj.start, cmdObj.end)
+  })
+
+// Calculate indexes
+program
+  .command('calculate <stockCode>')
+  .description('Fetching a specific stock')
+  .option('-s, --start <value>', 'string argument', parseDate)
+  .option('-e, --end <value>', 'string argument', parseDate)
+  .action((stockCode, cmdObj) => {
+    calculate(stockCode, cmdObj.start, cmdObj.end)
   })
 
 // TODO

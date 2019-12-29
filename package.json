@@ -2,7 +2,7 @@
   "name": "stock-recommend",
   "version": "1.0.0",
   "description": "Recommend stock analyzing past trading history",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
